@@ -4,6 +4,7 @@ import './App.css'
 
 import RouletteWheel from './components/RouletteWheel'
 
+
 function App() {
     const [randomNumber, setRandomNumber] = useState(null)
     const [showNumber, setShowNumber] = useState(false)
@@ -85,12 +86,12 @@ function App() {
             </div>
             {showNumber && (
                 <div
-                    className={`number-obtained-container ${
-                        randomNumber % 2 === 0 ? 'even' : ''
-                    }`}
+                    className={`number-obtained-container`}
                     onAnimationEnd={handleAnimationEnd}
                 >
-                    <span className="number-obtained">{randomNumber || 0}</span>
+                    <span className={`number-obtained ${
+                        randomNumber % 2 === 0 ? 'even' : 'odd'
+                    }`}>{randomNumber || 0}</span>
                 </div>
             )}
             <RouletteWheel
@@ -98,6 +99,7 @@ function App() {
                 setShowNumber={setShowNumber}
                 setSpinning={setSpinning}
             />
+            
         </main>
     )
 }

@@ -23,26 +23,32 @@ main {
   align-items: center;
   justify-content: center;
   z-index: -1;
+  transform: translateY(4000px) ;
+  height: 8000px;
+  width: 8000px;
+
+  
+}
+.roulette-container svg{
+  transform: rotate(-5.4deg);
+}
+.roulette-container::after{
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 400px;
+  background-color: #111;
+  clip-path: polygon(65% 0, 35% 0, 50% 25%);
+  top: 0;
 }
 
 .roulette-wheel{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 8000px;
-  min-height: 8000px;
-  position: absolute;
-  transform: translateY(4100px) rotate(41.35deg);
   
-}
-.roulette-container::after{
-  content: '';
   position: absolute;
-  width: 100px;
-  height: 200px;
-  background-color: #111;
-  clip-path: polygon(65% 0, 35% 0, 50% 25%);
-  transform: translateY(100%);
+  
 }
 .roulette-num-container{
   position: absolute;
@@ -52,10 +58,8 @@ main {
   height: 100%;
   border-radius: 50%;
   background-color: #151515;
-  overflow: hidden;
   border: 10px solid #555;
   outline: 10px solid #151515;
-  transform: rotate(360deg);
 }
 
 .roulette-num{
@@ -117,10 +121,10 @@ main {
   box-shadow: 5px 5px 10px #0007;
   animation: scale-in-out 2s .25s cubic-bezier(0.34, 1.56, 0.64, 1) 1 both
 }
-.even{
+.odd{
   background-color: #888;
 }
-.odd{
+.even{
 
   background-color: #d41818;
 }
